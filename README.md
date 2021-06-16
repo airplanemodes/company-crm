@@ -14,4 +14,4 @@ Check the working build on the web: `https://company-crm.netlify.app`.
 
 
 
-### Copyright © 2021 Airplane Modes Network.
+Copyright © 2021 Airplane Modes Network
