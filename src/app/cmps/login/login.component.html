@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="container text-center p-5">
+      <h1 class="display-4">COMPANY 
+        <i class="fa fa-angle-double-up text-success" aria-hidden="true"></i> CRM</h1>
+            <form #f="ngForm" (ngSubmit)="onSub()" class="col-lg-6 mx-auto">
+                <h5>Login with your account</h5>
+                <div>
+                    <input name="email" type="email" #inputEmail="ngModel" ngModel class="form-control fontAwesome" placeholder="&#xf2b7; E-mail" required email>
+                    <div *ngIf="inputEmail.touched && inputEmail.invalid" class="text-danger text-start">Valid e-mail is required</div>
+                </div>
+                <div>
+                    <input name="password" type="password" #inputPass="ngModel" ngModel class="form-control mt-3 fontAwesome" placeholder="&#xf09c; Password" required minlength="3">
+                    <div *ngIf="inputPass.touched && inputPass.invalid" class="text-danger text-start">Password is required</div>
+                </div>
+                <div>
+                    <button class="btn btn-success w-100 mt-4">Sign in</button>
+                </div>
+                <div class="mt-5">
+                    <a class="text-success text-decoration-none" routerLink="/signup">Not registered yet as user? Create a new account!</a>
+                    <br>
+                    <div>Copyright © 2021 Airplane Modes</div>
+                </div>
+            </form>
+    </div>
+</div>
+
+  

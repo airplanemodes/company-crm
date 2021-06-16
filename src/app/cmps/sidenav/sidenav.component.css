@@ -1,0 +1,15 @@
+.sideNav {
+    min-height: calc(100vh - 65px);
+}
+
+a {
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    border-bottom: 2px solid white;
+}
+
+a:hover {
+    background: green;
+}
