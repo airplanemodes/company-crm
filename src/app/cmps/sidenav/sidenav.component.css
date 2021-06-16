@@ -13,3 +13,11 @@ a {
 a:hover {
     background: green;
 }
+
+.transition {
+    transition: all .15s ease-in-out;
+}
+
+.transition:hover {
+    transition: all .15s ease-in-out;
+}

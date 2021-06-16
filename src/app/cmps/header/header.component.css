@@ -16,3 +16,13 @@ nav a.active {
 i {
     font-size: 20px;
 }
+
+.transition {
+    color: white;
+    transition: color .15s ease-in-out;
+}
+
+.transition:hover {
+    color: green;
+    transition: color .15s ease-in-out;
+}

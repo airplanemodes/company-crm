@@ -3,12 +3,12 @@ table i {
 }
 
 table tbody td i {
-    display: none;
+    visibility: hidden;
 }
 
 table tbody td:hover i {
+    visibility: visible;
     cursor: pointer;
-    display: inline;
 }
 
 table a {
