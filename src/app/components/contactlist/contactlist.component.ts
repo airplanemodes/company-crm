@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { DbfbService } from '../../services/dbfb.service';
+import { DatabaseService } from '../../services/database.service';
+
 
 @Component({
   selector: 'app-contactlist',
   templateUrl: './contactlist.component.html',
   styleUrls: ['./contactlist.component.css']
 })
+
+
+
 export class ContactListComponent implements OnInit {
   _ar:any[] = [];
-  constructor(private afdb:AngularFireDatabase, private dbfb:DbfbService) { }
+  constructor(private afdb:AngularFireDatabase, private dbfb:DatabaseService) { }
 
   ngOnInit(): void {
     this.getListUserContacts();

@@ -1,6 +1,6 @@
 # CRM Company
 
-It was very interesting to discover Angular web framework. The ecosystem actually lets to feel comfortable. Particular, at CSS files. And by the way, it's the awesome point to get familiar with TypeScript.
+A simplest customer relationship management application.
 
 ## Setup
 
@@ -12,6 +12,9 @@ It was very interesting to discover Angular web framework. The ecosystem actuall
 
 Check the working build on the web: `https://company-crm.netlify.app`.
 
-
-
+## Use
+* Create a user account.
+* Add customers.
+* Each user account has its own customers.
+  
 **Copyright © 2021 Airplane Modes Network**

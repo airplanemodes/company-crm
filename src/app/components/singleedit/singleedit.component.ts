@@ -1,20 +1,24 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DbfbService } from '../../services/dbfb.service';
+import { DatabaseService } from '../../services/database.service';
+
 
 @Component({
   selector: 'app-singleedit',
   templateUrl: './singleedit.component.html',
   styleUrls: ['./singleedit.component.css']
 })
+
+
+
 export class SingleeditComponent implements OnInit {
   @ViewChild('f') crmForm:any;
   typeInput = "date";
   user:any = {};
   constructor(private afs:AngularFireDatabase,
     private route:ActivatedRoute,
-    private dbfb:DbfbService,
+    private dbfb:DatabaseService,
     private router:Router) { }
 
   ngOnInit(): void {

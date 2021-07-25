@@ -4,16 +4,18 @@ import { AngularFireDatabase } from '@angular/fire/database';
 @Injectable({
   providedIn: 'root'
 })
-export class DbfbService {
-  customers_ar:any[] = [];
-  srchCstmr_ar:any[] = [];
+
+
+export class DatabaseService {
+  customersArray:any[] = [];
+  searchCustomersArray:any[] = [];
   
   constructor(private afdb:AngularFireDatabase) { 
     this.getCustomers();
   }
 
   getCustomersArrayData():any {
-    return this.customers_ar;
+    return this.customersArray;
   }
 
 
@@ -53,14 +55,14 @@ export class DbfbService {
 
   getCustomers():void {
     this.getObserCustomers().subscribe((res:any) => {
-      this.customers_ar.splice(0, this.customers_ar.length);
+      this.customersArray.splice(0, this.customersArray.length);
       res.map((item:any) => {
         let newItem = item.payload.val();
         newItem.id = item.payload.key;
-        this.customers_ar.push(newItem);
+        this.customersArray.push(newItem);
       })
-      this.srchCstmr_ar = [...this.customers_ar];
-      console.log(this.customers_ar)
+      this.searchCustomersArray = [...this.customersArray];
+      console.log(this.customersArray)
     })
   }
 
@@ -68,12 +70,12 @@ export class DbfbService {
 
   // Search on customers
   filterArrayBy(filterSearch:any, key:any):void {
-    let temp_ar = this.srchCstmr_ar.filter((item) => {
+    let temp_ar = this.searchCustomersArray.filter((item) => {
       // toLowerCase() methods make it not case sensitive
       return item[key].toLowerCase().includes(filterSearch.toLowerCase());
     })
     // ...temp_ar parameter insted of push()
-    this.customers_ar.splice(0, this.customers_ar.length, ...temp_ar)
+    this.customersArray.splice(0, this.customersArray.length, ...temp_ar)
   }
 
 }

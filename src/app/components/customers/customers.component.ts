@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { DbfbService } from '../../services/dbfb.service';
+import { DatabaseService } from '../../services/database.service';
+
 
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
+
+
+
 export class CustomersComponent implements OnInit {
   customersArr:any[] = [];
-  constructor(private dbfb:DbfbService) { }
+  constructor(private dbfb:DatabaseService) { }
 
   ngOnInit(): void {
     this.customersArr = this.dbfb.getCustomersArrayData()

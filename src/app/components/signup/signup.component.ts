@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { DbfbService } from '../../services/dbfb.service';
+import { DatabaseService } from '../../services/database.service';
 import { FireauthService } from '../../services/fireauth.service';
 
 @Component({
@@ -8,12 +8,15 @@ import { FireauthService } from '../../services/fireauth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
+
+
+
 export class SignUpComponent implements OnInit {
   @ViewChild('f') theForm:any
   constructor(
     private authFb:FireauthService,
     private router:Router,
-    private dbfire:DbfbService) { }
+    private dbfire:DatabaseService) { }
 
   ngOnInit(): void {
   }

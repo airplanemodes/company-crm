@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { DbfbService } from '../../services/dbfb.service';
+import { DatabaseService } from '../../services/database.service';
+
 
 @Component({
   selector: 'app-addcustomer',
@@ -13,9 +14,12 @@ import { DbfbService } from '../../services/dbfb.service';
   `]
 
 })
+
+
+
 export class AddCustomerComponent implements OnInit {
   @ViewChild('f') crmForm:any;
-  constructor(private dbfb:DbfbService, private router:Router) { }
+  constructor(private dbfb:DatabaseService, private router:Router) { }
 
   ngOnInit(): void {
   }
