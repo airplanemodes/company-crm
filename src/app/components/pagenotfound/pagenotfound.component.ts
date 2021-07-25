@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';
   
   styleUrls: ['./pagenotfound.component.css']
 })
-export class PagenotfoundComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit {
 
   constructor() { }
 

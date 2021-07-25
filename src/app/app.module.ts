@@ -13,17 +13,17 @@ import { environment } from '../environments/environment'; // db login details
 
 // Components
 import { AppComponent } from './app.component';
-import { LoginComponent } from './cmps/login/login.component';
-import { AdminComponent } from './cmps/admin/admin.component';
-import { HeaderComponent } from './cmps/header/header.component';
-import { SidenavComponent } from './cmps/sidenav/sidenav.component';
-import { CustomersComponent } from './cmps/customers/customers.component';
-import { AddcustomerComponent } from './cmps/addcustomer/addcustomer.component';
-import { SingleinfoComponent } from './cmps/singleinfo/singleinfo.component';
-import { SingleeditComponent } from './cmps/singleedit/singleedit.component';
-import { SignupComponent } from './cmps/signup/signup.component';
-import { ContctlstComponent } from './cmps/contctlst/contctlst.component';
-import { PagenotfoundComponent } from './cmps/pagenotfound/pagenotfound.component';
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SideNavComponent } from './components/sidenav/sidenav.component';
+import { CustomersComponent } from './components/customers/customers.component';
+import { AddCustomerComponent } from './components/addcustomer/addcustomer.component';
+import { SingleinfoComponent } from './components/singleinfo/singleinfo.component';
+import { SingleeditComponent } from './components/singleedit/singleedit.component';
+import { SignUpComponent } from './components/signup/signup.component';
+import { ContactListComponent } from './components/contactlist/contactlist.component';
+import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -32,14 +32,14 @@ import { PagenotfoundComponent } from './cmps/pagenotfound/pagenotfound.componen
     LoginComponent,
     AdminComponent,
     HeaderComponent,
-    SidenavComponent,
+    SideNavComponent,
     CustomersComponent,
-    AddcustomerComponent,
+    AddCustomerComponent,
     SingleinfoComponent,
     SingleeditComponent,
-    SignupComponent,
-    ContctlstComponent,
-    PagenotfoundComponent
+    SignUpComponent,
+    ContactListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

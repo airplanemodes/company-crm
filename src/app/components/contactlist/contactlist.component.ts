@@ -3,11 +3,11 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { DbfbService } from '../../services/dbfb.service';
 
 @Component({
-  selector: 'app-contctlst',
-  templateUrl: './contctlst.component.html',
-  styleUrls: ['./contctlst.component.css']
+  selector: 'app-contactlist',
+  templateUrl: './contactlist.component.html',
+  styleUrls: ['./contactlist.component.css']
 })
-export class ContctlstComponent implements OnInit {
+export class ContactListComponent implements OnInit {
   _ar:any[] = [];
   constructor(private afdb:AngularFireDatabase, private dbfb:DbfbService) { }
 

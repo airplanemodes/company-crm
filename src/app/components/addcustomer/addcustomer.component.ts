@@ -13,7 +13,7 @@ import { DbfbService } from '../../services/dbfb.service';
   `]
 
 })
-export class AddcustomerComponent implements OnInit {
+export class AddCustomerComponent implements OnInit {
   @ViewChild('f') crmForm:any;
   constructor(private dbfb:DbfbService, private router:Router) { }
 

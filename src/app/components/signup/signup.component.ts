@@ -8,7 +8,7 @@ import { FireauthService } from '../../services/fireauth.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignUpComponent implements OnInit {
   @ViewChild('f') theForm:any
   constructor(
     private authFb:FireauthService,
