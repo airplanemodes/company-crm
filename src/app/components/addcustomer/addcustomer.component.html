@@ -7,22 +7,22 @@
             <div class="col-lg-6">
                 <label>*First Name</label>
                 <input name="first" ngModel #firstInput="ngModel" required type="text" class="form-control mt-2">
-                <small *ngIf="firstInput.touched && firstInput.invalid" class="text-danger">You must fill the first name</small>
+                <small *ngIf="firstInput.touched && firstInput.invalid" class="text-danger">The first name is required</small>
             </div>
             <div class="col-lg-6">
                 <label>*Last Name</label>
                 <input name="last" ngModel #lastInput="ngModel" required type="text" class="form-control mt-2">
-                <small *ngIf="lastInput.touched && lastInput.invalid" class="text-danger">You must fill the last name</small>
+                <small *ngIf="lastInput.touched && lastInput.invalid" class="text-danger">The last name is required</small>
             </div>
             <div class="col-lg-6 mt-3">
                 <label>*E-Mail</label>
                 <input name="email" ngModel #emailInput="ngModel" required type="text" class="form-control mt-2">
-                <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">You must fill the email</small>
+                <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">Valid e-mail address is required</small>
             </div>
             <div class="col-lg-6 mt-3">
                 <label>*Phone</label>
                 <input name="phone" ngModel #phoneInput="ngModel" required minlength="5" type="tel" class="form-control mt-2">
-                <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">You must fill the phone</small>
+                <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">Valid phone number is required</small>
             </div>
             <div class="col-12">
                 <label>Address</label>

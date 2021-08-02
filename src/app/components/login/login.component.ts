@@ -46,4 +46,4 @@ import { FireauthService } from '../../services/fireauth.service';
       console.log(this.myForm.form.value);
     }
   }
-}
+};

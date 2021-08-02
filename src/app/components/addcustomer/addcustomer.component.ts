@@ -31,7 +31,12 @@ export class AddCustomerComponent implements OnInit {
       // adds user id
       formBody.user_id = localStorage["fb_user"];
       this.dbfb.addCustomer(formBody);
+      alert("Success!");
       this.router.navigate(['/admin'])
+      .then(() => {
+        window.location.reload();
+      });
     }
+
   }
-}
+};

@@ -14,7 +14,7 @@ import { DatabaseService } from '../../services/database.service';
 
 export class SingleeditComponent implements OnInit {
   @ViewChild('f') crmForm:any;
-  typeInput = "date";
+  typeInput = "text";
   user:any = {};
   constructor(private afs:AngularFireDatabase,
     private route:ActivatedRoute,
@@ -62,4 +62,4 @@ export class SingleeditComponent implements OnInit {
     })
   }
 
-}
+};

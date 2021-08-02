@@ -39,4 +39,4 @@ export class CustomersComponent implements OnInit {
     console.log(event.target.value);
     this.dbfb.filterArrayBy(event.target.value, 'phone');
   }
-}
+};

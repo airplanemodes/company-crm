@@ -9,23 +9,23 @@
           <label>*First name</label>
           <!-- [type] works like [ngModel] -->
           <input name="first" [ngModel]="user.first" #firstInput="ngModel" required [type]="typeInput" class="form-control mt-2" >
-          <small *ngIf="firstInput.touched && firstInput.invalid" class="text-danger">* You must fill your name</small>
+          <small *ngIf="firstInput.touched && firstInput.invalid" class="text-danger">* The first name is required</small>
         </div>
         <div class="col-lg-6">
           <label >*Last name</label>
-          <input name="last" [ngModel]="user.last" #lastInput="ngModel" required type="text" class="form-control mt-2" >
-          <small *ngIf="lastInput.touched && lastInput.invalid" class="text-danger">* You must fill your name</small>
+          <input name="last" [ngModel]="user.last" #lastInput="ngModel" required [type]="typeInput" class="form-control mt-2" >
+          <small *ngIf="lastInput.touched && lastInput.invalid" class="text-danger">* The last name is required</small>
         </div>
      
         <div class="col-lg-6 mt-3">
           <label>*Email</label>
-          <input name="email" [ngModel]="user.email" #emailInput="ngModel" required email type="text" class="form-control mt-2" >
-          <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">* Enter valid email</small>
+          <input name="email" [ngModel]="user.email" #emailInput="ngModel" required email [type]="typeInput" class="form-control mt-2" >
+          <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">* Valid e-mail address is required</small>
         </div>
         <div class="col-lg-6 mt-3">
           <label>*Phone</label>
-          <input name="phone" [ngModel]="user.phone" #phoneInput="ngModel" required minlength="5"  type="tel" class="form-control mt-2" >
-          <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">* Enter valid phone</small>
+          <input name="phone" [ngModel]="user.phone" #phoneInput="ngModel" required minlength="5" type="tel" class="form-control mt-2" >
+          <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">* Valid phone number is required</small>
           
         </div>
         <div class="col-12 mt-3">

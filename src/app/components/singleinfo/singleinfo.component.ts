@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-singleinfo',
   templateUrl: './singleinfo.component.html',
   styleUrls: ['./singleinfo.component.css']
 })
+
+
 export class SingleinfoComponent implements OnInit {
   user:any = {};
   constructor(private afd:AngularFireDatabase, private route:ActivatedRoute) { }
@@ -38,4 +41,5 @@ export class SingleinfoComponent implements OnInit {
       console.log(this.user)
     })
   }
-}
+  
+};

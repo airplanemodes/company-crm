@@ -38,4 +38,4 @@ export class SignUpComponent implements OnInit {
     // result.user -> success
     // result.code -> problem
   }
-}
+};
