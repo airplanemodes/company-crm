@@ -7,41 +7,43 @@ import { AngularFireDatabase } from '@angular/fire/database';
 
 
 export class DatabaseService {
+
   customersArray:any[] = [];
-  searchCustomersArray:any[] = [];
-  
+  searchCustomersArray:any[] = [];  
+
   constructor(private afdb:AngularFireDatabase) { 
     this.getCustomers();
-  }
+  };
+
+
 
   getCustomersArrayData():any {
     return this.customersArray;
-  }
+  };
 
 
-  // adds new user account
+  // create a new user account
   addNewAccount(body:any):void {
     // for not showing the password at database
     body.password = "********"
     this.afdb.list("users").push(body);
-  }
+  };
 
 
-
-  // adds new entry to the database
+  // add a new customer to the database
   addCustomer(body:any):void {
     this.afdb.list('customers').push(body);
-  }
+  };
 
-  // deletes an entry
+  // delete an entry
   delCustomer(id:any):void {
     this.afdb.list('customers/'+id).remove();
-  }
+  };
 
   // edit an entry
   editCustomer(id:any, body:any):void {
     this.afdb.object('customers/'+id).update(body);
-  }
+  };
 
 
 
@@ -51,7 +53,7 @@ export class DatabaseService {
     // then checks and shows all customers of that id
     let userId = localStorage['fb_user'] || "";
     return this.afdb.list('customers', ref => ref.orderByChild('user_id').equalTo(userId)).snapshotChanges();
-  }
+  };
 
   getCustomers():void {
     this.getObserCustomers().subscribe((res:any) => {
@@ -60,15 +62,15 @@ export class DatabaseService {
         let newItem = item.payload.val();
         newItem.id = item.payload.key;
         this.customersArray.push(newItem);
-      })
+      });
       this.searchCustomersArray = [...this.customersArray];
       console.log(this.customersArray)
-    })
-  }
+    });
+  };
 
 
 
-  // Search on customers
+  // Search on customers page
   filterArrayBy(filterSearch:any, key:any):void {
     let temp_ar = this.searchCustomersArray.filter((item) => {
       // toLowerCase() methods make it not case sensitive
@@ -76,6 +78,6 @@ export class DatabaseService {
     })
     // ...temp_ar parameter insted of push()
     this.customersArray.splice(0, this.customersArray.length, ...temp_ar)
-  }
+  };
 
-}
+};

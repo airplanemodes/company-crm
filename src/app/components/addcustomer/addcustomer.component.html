@@ -16,12 +16,12 @@
             </div>
             <div class="col-lg-6 mt-3">
                 <label>*E-Mail</label>
-                <input name="email" ngModel #emailInput="ngModel" required type="text" class="form-control mt-2">
+                <input name="email" ngModel #emailInput="ngModel" required email type="email" class="form-control mt-2">
                 <small *ngIf="emailInput.touched && emailInput.invalid" class="text-danger">Valid e-mail address is required</small>
             </div>
             <div class="col-lg-6 mt-3">
                 <label>*Phone</label>
-                <input name="phone" ngModel #phoneInput="ngModel" required minlength="5" type="tel" class="form-control mt-2">
+                <input name="phone" ngModel #phoneInput="ngModel" required minlength="5" maxlength="14" type="tel" class="form-control mt-2">
                 <small *ngIf="phoneInput.touched && phoneInput.invalid" class="text-danger">Valid phone number is required</small>
             </div>
             <div class="col-12">

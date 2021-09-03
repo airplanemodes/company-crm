@@ -23,7 +23,7 @@
         </div>
         <div>
           <input name="phone" #inputPhone="ngModel" ngModel type="text" class="form-control mt-3" placeholder="Phone..."
-            required minlength="3">
+            required minlength="3" maxlength="14">
           <div *ngIf="inputPhone.touched && inputPhone.invalid" class="text-danger text-start">Enter valid phone</div>
         </div>
   

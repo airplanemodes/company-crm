@@ -12,12 +12,20 @@ import { DatabaseService } from '../../services/database.service';
 
 
 export class ContactListComponent implements OnInit {
-  _ar:any[] = [];
+
+  contactsArray:any[] = [];
+  searchContactsArray:any[] = [];  
+
+
   constructor(private afdb:AngularFireDatabase, private dbfb:DatabaseService) { }
+
+
 
   ngOnInit(): void {
     this.getListUserContacts();
   };
+
+
 
   getObserUserContacts():any {
     return this.afdb.list("users").snapshotChanges();
@@ -25,12 +33,30 @@ export class ContactListComponent implements OnInit {
 
   getListUserContacts():void {
     this.getObserUserContacts().subscribe((ref:any) => {
-      this._ar.splice(0, this._ar.length);
+      this.contactsArray.splice(0, this.contactsArray.length);
       ref.map((item:any) => {
         let newItem = item.payload.val();
-        this._ar.push(newItem);
+        this.contactsArray.push(newItem);
       });
+      this.searchContactsArray = [...this.contactsArray];
     });
+  };
+
+
+
+  // Search on contacts page
+  searchByName(event:any):void {
+    console.log(event.target.value);
+    this.filterContactsBy(event.target.value, 'name');
+  };
+
+  filterContactsBy(filterSearch:any, key:any):void {
+    let temp_ar = this.searchContactsArray.filter((item) => {
+      // toLowerCase() methods make it not case sensitive
+      return item[key].toLowerCase().includes(filterSearch.toLowerCase());
+    })
+    // ...temp_ar parameter insted of push()
+    this.contactsArray.splice(0, this.contactsArray.length, ...temp_ar)
   };
 
 };
