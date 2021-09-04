@@ -6,11 +6,12 @@ A simplest customer relationship management application.
 
 1. Run `npm install`.
 2. Install Angular CLI and run `ng serve`.
-3. Navigate to `http://localhost:4200/` **OR** check the build on the web: `https://company-crm.netlify.app`.
+3. Navigate to `http://localhost:4200/`.
 
 ## Use
 * Create a user account.
 * Add customers.
 * Each user account has its own customers.
+* Edit or delete entries if needed.
   
 **Copyright © 2021 Airplane Modes Network**

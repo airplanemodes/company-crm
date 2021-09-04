@@ -18,12 +18,12 @@ export class SingleeditComponent implements OnInit {
   user:any = {};
   constructor(private afs:AngularFireDatabase,
     private route:ActivatedRoute,
-    private dbfb:DatabaseService,
+    private dbService:DatabaseService,
     private router:Router) { }
 
   ngOnInit(): void {
     this.getUserInfo();
-  }
+  };
 
   onSub() {
     let id = this.route.snapshot.paramMap.get('id');
@@ -32,16 +32,16 @@ export class SingleeditComponent implements OnInit {
       let bodyForm = this.crmForm.form.value;
       // adding 'id' property
       bodyForm.user_id = localStorage["fb_user"];
-      this.dbfb.editCustomer(id, bodyForm);
+      this.dbService.editCustomer(id, bodyForm);
       this.router.navigate(['/admin']);
-    }
-  }
+    };
+  };
 
 
   getUserInfoObser():any {
     let id = this.route.snapshot.paramMap.get('id');
     return this.afs.list("customers/"+id).snapshotChanges();
-  }
+  };
 
   getUserInfo():void {
     this.getUserInfoObser().subscribe((ref:any) => {
@@ -49,17 +49,17 @@ export class SingleeditComponent implements OnInit {
       // מכיוון שאנחנו אוספים אובייקט מהפיירבייס
       // הפיירבייס מחזיר אובייקט כמערך 
       // שבכל תא במארך הוא מכיל מאפיין אחר
-      //  ולכן אנחנו עושים לולאה שעושה 2 דברים
+      // ולכן אנחנו עושים לולאה שעושה 2 דברים
       // אוספת את הקיי מאותו תא ובנוסף את התוכן שלו
       // עם PAYLOAD.VAL
       ref.map((item:any) => {
         // item.key -> מכיל את שם הקיי/מאפיין
         // item.payload.val() -> מכיל את הערך
         this.user[item.key] = item.payload.val();
-        // console.log(item.payload.val())
-      })
-      console.log(this.user)
-    })
-  }
+        //console.log(item.payload.val())
+      });
+      console.log(this.user);
+    });
+  };
 
 };

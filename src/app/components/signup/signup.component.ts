@@ -12,30 +12,31 @@ import { FireauthService } from '../../services/fireauth.service';
 
 
 export class SignUpComponent implements OnInit {
-  @ViewChild('f') theForm:any
+  @ViewChild('f') theForm:any;
   constructor(
-    private authFb:FireauthService,
+    private authService:FireauthService,
     private router:Router,
-    private dbfire:DatabaseService) { }
+    private dbService:DatabaseService) { };
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {};
+
 
   async onSub():Promise<any> {
     console.log(this.theForm.form.value);
     let user = this.theForm.form.value;
-    let result = await this.authFb.signupNewUser(user);
-    console.log(result)
-    if(result.user){
-      alert("Sign up successful! Now login")
-      this.dbfire.addNewAccount(user);
+    let result:any = await this.authService.signupNewUser(user);
+    //console.log(result);
+    if (result.user) {
+      alert("Sign up successful! Now login");
+      this.dbService.addNewAccount(user);
       this.router.navigate(["/"]);
-    }
-    if(result.code){
+    };
+    if (result.code) {
       alert(result.message);
-    }
+    };
     return result;
     // result.user -> success
     // result.code -> problem
-  }
+  };
+
 };

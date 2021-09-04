@@ -37,7 +37,10 @@ import { FireauthService } from '../../services/fireauth.service';
         if (data.user) {
           // also store user id at local storage
           localStorage.setItem("fb_user", data.user.uid);
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admin'])
+          .then(() => {
+            window.location.reload();
+          });
         };
         console.log(data);
       } catch (error) {

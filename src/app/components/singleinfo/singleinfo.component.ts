@@ -12,17 +12,18 @@ import { ActivatedRoute } from '@angular/router';
 
 export class SingleinfoComponent implements OnInit {
   user:any = {};
-  constructor(private afd:AngularFireDatabase, private route:ActivatedRoute) { }
+  constructor(private firedb:AngularFireDatabase, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getUserInfo();
-  }
+  };
 
+  
   getUserInfoObser():any {
     // get the needed customer info
     let id = this.route.snapshot.paramMap.get('id');
-    return this.afd.list('customers/'+id).snapshotChanges();
-  }
+    return this.firedb.list('customers/'+id).snapshotChanges();
+  };
 
   getUserInfo():void {
     this.getUserInfoObser().subscribe((ref:any) => {
@@ -34,12 +35,11 @@ export class SingleinfoComponent implements OnInit {
       // אוספת את הקיי מאותו תא ובנוסף את התוכן שלו
       // עם PAYLOAD.VAL
       ref.map((item:any) => {
-        // work with object, not array
         this.user[item.key] = item.payload.val()
-        // console.log(item.payload.val())
-      })
-      console.log(this.user)
-    })
-  }
+        //console.log(item.payload.val())
+      });
+      console.log(this.user);
+    });
+  };
   
 };
