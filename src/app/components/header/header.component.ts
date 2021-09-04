@@ -6,16 +6,18 @@ import { FireauthService } from '../../services/fireauth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
+
   user:any = {};
-  constructor(private authS:FireauthService) { }
+  constructor(private faService:FireauthService) { }
 
   logOut() {
-    this.authS.logOut()
+    this.faService.logOut()
   }
 
   ngOnInit(): void {
-    this.user = this.authS.getUserData();
+    this.user = this.faService.getUserData();
   }
 
 };

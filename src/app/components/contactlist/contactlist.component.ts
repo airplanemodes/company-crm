@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { DatabaseService } from '../../services/database.service';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class ContactListComponent implements OnInit {
   searchContactsArray:any[] = [];  
 
 
-  constructor(private afdb:AngularFireDatabase, private dbfb:DatabaseService) { }
+  constructor(private afdb:AngularFireDatabase) { }
 
 
 

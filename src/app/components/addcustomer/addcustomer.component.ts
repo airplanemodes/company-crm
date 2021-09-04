@@ -19,24 +19,23 @@ import { DatabaseService } from '../../services/database.service';
 
 export class AddCustomerComponent implements OnInit {
   @ViewChild('f') crmForm:any;
-  constructor(private dbfb:DatabaseService, private router:Router) { }
+  constructor(private dbService:DatabaseService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {};
 
+  
   addNewCustomer(): any {
     if (this.crmForm.form.status == "VALID") {
       let formBody = this.crmForm.form.value;
-      console.log(formBody);
-      // adds user id
-      formBody.user_id = localStorage["fb_user"];
-      this.dbfb.addCustomer(formBody);
+      //console.log(formBody);
+      formBody.user_id = localStorage["fb_user"]; // adding the 'user_id' property
+      this.dbService.addCustomer(formBody);
       alert("Success!");
       this.router.navigate(['/admin'])
       .then(() => {
         window.location.reload();
       });
-    }
+    };
+  };
 
-  }
 };

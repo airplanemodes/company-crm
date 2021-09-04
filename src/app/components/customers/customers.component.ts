@@ -15,17 +15,17 @@ export class CustomersComponent implements OnInit {
   customersArr:any[] = [];
 
 
-  constructor(private dbfb:DatabaseService) { }
+  constructor(private dbService:DatabaseService) { }
 
 
   ngOnInit(): void {
-    this.customersArr = this.dbfb.getCustomersArrayData()
+    this.customersArr = this.dbService.getCustomersArrayData()
   };
 
 
   deleteCustomer(id:any):void {
     if (confirm("Are you sure?")) {
-      this.dbfb.delCustomer(id);
+      this.dbService.delCustomer(id);
     };
   };
 
@@ -34,17 +34,17 @@ export class CustomersComponent implements OnInit {
   // Search functions
   searchByFirstName(event:any):void {
     console.log(event.target.value);
-    this.dbfb.filterArrayBy(event.target.value, 'first');
+    this.dbService.filterArrayBy(event.target.value, 'first');
   };
 
   searchByLastName(event:any):void {
     console.log(event.target.value);
-    this.dbfb.filterArrayBy(event.target.value, 'last');
+    this.dbService.filterArrayBy(event.target.value, 'last');
   };
 
   searchByPhone(event:any):void {
     console.log(event.target.value);
-    this.dbfb.filterArrayBy(event.target.value, 'phone');
+    this.dbService.filterArrayBy(event.target.value, 'phone');
   };
 
 };
