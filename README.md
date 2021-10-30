@@ -13,5 +13,3 @@ A simplest customer relationship management application.
 * Add customers.
 * Each user account has its own customers.
 * Edit or delete entries if needed.
-  
-**Copyright © 2021 Airplane Modes Network**
