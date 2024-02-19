@@ -11,20 +11,21 @@ import { SingleeditComponent } from './components/singleedit/singleedit.componen
 import { SingleinfoComponent } from './components/singleinfo/singleinfo.component';
 
 const appRouter: Routes = [
-  {path:"", component:LoginComponent},
-  {path:"signup", component:SignUpComponent},
-  {path:"admin", component:AdminComponent, children: [
-    {path:"", component:CustomersComponent},
-    {path:"addcustomer", component:AddCustomerComponent},
-    {path:"singleinfo/:id", component:SingleinfoComponent},
-    {path:"singleedit/:id", component:SingleeditComponent},
-    {path:"contacts", component:ContactListComponent},
-  ]},
-  {path:"**", component:PageNotFoundComponent}
+    { path: "", component: LoginComponent },
+    { path: "signup", component: SignUpComponent },
+    { path:"admin", component: AdminComponent, children: [
+        { path: "", component: CustomersComponent},
+        { path: "addcustomer", component: AddCustomerComponent},
+        { path: "singleinfo/:id", component: SingleinfoComponent},
+        { path: "singleedit/:id", component: SingleeditComponent},
+        { path: "contacts", component: ContactListComponent},
+    ]},
+    { path:"**", component: PageNotFoundComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRouter)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(appRouter) ],
+  exports: [ RouterModule ]
 })
+
 export class AppRoutingModule { }
