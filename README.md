@@ -8,7 +8,8 @@ A simplest customer relationship management application.
 2. Install Angular CLI and run `ng serve`.
 3. Navigate to `http://localhost:4200/`.
 
-## Use
+## Usage
+
 * Create a user account.
 * Add customers.
 * Each user account has its own customers.
