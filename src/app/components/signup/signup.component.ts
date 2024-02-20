@@ -18,7 +18,6 @@ export class SignUpComponent implements OnInit {
 
     ngOnInit(): void {};
 
-
     async onSub(): Promise<any> {
         console.log(this.theForm.form.value);
         let user = this.theForm.form.value;

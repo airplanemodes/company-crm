@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "company-crm-fire": {
+      "hosting": {
+        "company-crm": [
+          "company-crm-fire"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "company-crm-fire"
+  }
+}

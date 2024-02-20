@@ -10,13 +10,13 @@ import { FireauthService } from '../../services/fireauth.service';
 export class HeaderComponent implements OnInit {
 
     user: any = {};
-    constructor(private faService:FireauthService) { }
+    constructor(private fas:FireauthService) { }
 
     logOut() {
-        this.faService.logOut()
+        this.fas.logOut()
     }
 
     ngOnInit(): void {
-        this.user = this.faService.getUserData();
+        this.user = this.fas.getUserData();
     }
 }

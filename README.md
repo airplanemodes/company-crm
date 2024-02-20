@@ -2,6 +2,8 @@
 
 A simplest customer relationship management application.
 
+![CRM](/crm.png "CRM Company")
+
 ## Setup
 
 1. Run `npm install`.
