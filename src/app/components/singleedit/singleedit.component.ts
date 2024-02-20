@@ -10,7 +10,7 @@ import { DatabaseService } from '../../services/database.service';
     styleUrls: ['./singleedit.component.css']
 })
 
-export class SingleeditComponent implements OnInit {
+export class SingleEditComponent implements OnInit {
     @ViewChild('f') crmForm: any;
     typeInput = "text";
     user: any = {};

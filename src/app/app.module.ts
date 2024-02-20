@@ -18,12 +18,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { SideNavComponent } from './components/sidenav/sidenav.component';
 import { CustomersComponent } from './components/customers/customers.component';
 import { AddCustomerComponent } from './components/addcustomer/addcustomer.component';
-import { SingleinfoComponent } from './components/singleinfo/singleinfo.component';
-import { SingleeditComponent } from './components/singleedit/singleedit.component';
+import { SingleInfoComponent } from './components/singleinfo/singleinfo.component';
+import { SingleEditComponent } from './components/singleedit/singleedit.component';
 import { SignUpComponent } from './components/signup/signup.component';
 import { ContactListComponent } from './components/contactlist/contactlist.component';
-import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component'
-;
+import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -39,8 +38,8 @@ import { getPerformance, providePerformance } from '@angular/fire/performance';
         SideNavComponent,
         CustomersComponent,
         AddCustomerComponent,
-        SingleinfoComponent,
-        SingleeditComponent,
+        SingleInfoComponent,
+        SingleEditComponent,
         SignUpComponent,
         ContactListComponent,
         PageNotFoundComponent

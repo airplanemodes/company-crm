@@ -7,8 +7,8 @@ import { CustomersComponent } from './components/customers/customers.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { SignUpComponent } from './components/signup/signup.component';
-import { SingleeditComponent } from './components/singleedit/singleedit.component';
-import { SingleinfoComponent } from './components/singleinfo/singleinfo.component';
+import { SingleEditComponent } from './components/singleedit/singleedit.component';
+import { SingleInfoComponent } from './components/singleinfo/singleinfo.component';
 
 const appRouter: Routes = [
     { path: "", component: LoginComponent },
@@ -16,8 +16,8 @@ const appRouter: Routes = [
     { path:"admin", component: AdminComponent, children: [
         { path: "", component: CustomersComponent},
         { path: "addcustomer", component: AddCustomerComponent},
-        { path: "singleinfo/:id", component: SingleinfoComponent},
-        { path: "singleedit/:id", component: SingleeditComponent},
+        { path: "singleinfo/:id", component: SingleInfoComponent},
+        { path: "singleedit/:id", component: SingleEditComponent},
         { path: "contacts", component: ContactListComponent},
     ]},
     { path:"**", component: PageNotFoundComponent }

@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./singleinfo.component.css']
 })
 
-export class SingleinfoComponent implements OnInit {
+export class SingleInfoComponent implements OnInit {
     user: any = {};
     constructor(private firedb:AngularFireDatabase, private route:ActivatedRoute) { }
 
