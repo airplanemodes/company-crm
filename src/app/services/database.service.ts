@@ -9,7 +9,7 @@ export class DatabaseService {
     customersArray: any[] = [];
     searchCustomersArray: any[] = [];  
 
-    constructor(private afdb:AngularFireDatabase) { 
+    constructor(private afdb: AngularFireDatabase) { 
         this.getCustomers();
     }
 
@@ -24,28 +24,28 @@ export class DatabaseService {
         this.afdb.list("users").push(body);
     }
 
-  // add a new customer to the database
+    // add a new customer to the database
     addCustomer(body: any): void {
-        this.afdb.list('customers').push(body);
+        this.afdb.list("customers").push(body);
     }
 
     // delete an entry
-    delCustomer(id:any):void {
-        this.afdb.list('customers/'+id).remove();
+    delCustomer(id: any): void {
+        this.afdb.list("customers/"+id).remove();
     }
 
     // edit an entry
     editCustomer(id: any, body: any): void {
-        this.afdb.object('customers/'+id).update(body);
+        this.afdb.object("customers/"+id).update(body);
     }
 
     // returns observable that can be listened by subscribe()
     getObserCustomers(): any {
         // getting a user_id from a local storage, that stored at fb_user
         // then checks and shows all customers of that id
-        let userId = localStorage['fb_user'] || "";
+        let userId = localStorage["fb_user"] || "";
         return this.afdb
-            .list('customers', ref => ref.orderByChild('user_id')
+            .list("customers", ref => ref.orderByChild("user_id")
             .equalTo(userId)).snapshotChanges();
     }
 

@@ -22,7 +22,7 @@ export class FireauthService {
     }
 
     // Sign Up
-    async signupNewUser(newUser: any) {
+    async signUpNewUser(newUser: any) {
         try {
             let result = await this.fa.createUserWithEmailAndPassword(newUser.email, newUser.password);
             return result;

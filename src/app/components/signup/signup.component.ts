@@ -13,20 +13,20 @@ export class SignUpComponent implements OnInit {
     @ViewChild('f') theForm: any;
     constructor(
         private authService: FireauthService,
-        private router: Router,
-        private dbService: DatabaseService) { };
+        private r: Router,
+        private dbs: DatabaseService) { };
 
     ngOnInit(): void {};
 
     async onSub(): Promise<any> {
         console.log(this.theForm.form.value);
         let user = this.theForm.form.value;
-        let result: any = await this.authService.signupNewUser(user);
+        let result: any = await this.authService.signUpNewUser(user);
         // console.log(result);
         if (result.user) {
             alert("Sign up successful! Now login");
-            this.dbService.addNewAccount(user);
-            this.router.navigate([ "/" ]);
+            this.dbs.addNewAccount(user);
+            this.r.navigate([ "/" ]);
         }
         if (result.code) {
             alert(result.message);
